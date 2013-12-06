@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="test-bundle">
+  <ConfigurationVersion minorVersion="0" majorVersion="4"/>
+  <CreatedAt>1384911279458</CreatedAt>
+  <CreatedBy>dan.nemeth@merck.com</CreatedBy>
+  <Description>API proxy for ALL tests...can this be done?</Description>
+  <DisplayName>test-bundle</DisplayName>
+  <LastModifiedAt>1384911279458</LastModifiedAt>
+  <LastModifiedBy>dan.nemeth@merck.com</LastModifiedBy>
+  <Policies>
+    <Policy>addcontenttypeheader</Policy>
+    <Policy>extractvariables-raisefault</Policy>
+    <Policy>extractvariables</Policy>
+    <Policy>formatxml</Policy>
+    <Policy>gettestbundle-assignmessage</Policy>
+    <Policy>gettestbundle</Policy>
+    <Policy>jsontoxml</Policy>
+    <Policy>quota</Policy>
+    <Policy>raisefault</Policy>
+    <Policy>spikearrest</Policy>
+    <Policy>xmltojson</Policy>
+  </Policies>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+  <Resources/>
+  <TargetServers/>
+  <TargetEndpoints>
+    <TargetEndpoint>default</TargetEndpoint>
+  </TargetEndpoints>
+  <validate>false</validate>
+</APIProxy>

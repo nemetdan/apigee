@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="test-responder">
+  <ConfigurationVersion minorVersion="0" majorVersion="4"/>
+  <CreatedAt>1384884866126</CreatedAt>
+  <CreatedBy>dan.nemeth@merck.com</CreatedBy>
+  <Description>This is a generic test script that provides a consistent response.</Description>
+  <DisplayName>test-responder</DisplayName>
+  <LastModifiedAt>1384884866126</LastModifiedAt>
+  <LastModifiedBy>dan.nemeth@merck.com</LastModifiedBy>
+  <Policies>
+    <Policy>jsontoxml</Policy>
+  </Policies>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+  <Resources>
+    <Resource>node://package.json</Resource>
+    <Resource>node://server.js</Resource>
+  </Resources>
+  <TargetServers/>
+  <TargetEndpoints>
+    <TargetEndpoint>default</TargetEndpoint>
+  </TargetEndpoints>
+  <validate>false</validate>
+</APIProxy>

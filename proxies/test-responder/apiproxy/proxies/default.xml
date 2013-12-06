@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <Description/>
+  <Flows>
+    <Flow name="ConvertToXML">
+      <Description/>
+      <Condition>request.header.Content-Type equals "text/xml"</Condition>
+      <Response>
+        <Step>
+          <FaultRules/>
+          <Name>jsontoxml</Name>
+        </Step>
+      </Response>
+      <Request/>
+    </Flow>
+  </Flows>
+  <PreFlow name="PreFlow">
+    <Request/>
+    <Response/>
+  </PreFlow>
+  <HTTPProxyConnection>
+    <BasePath>/v1/tests/general/responder</BasePath>
+    <VirtualHost>default</VirtualHost>
+    <VirtualHost>secure</VirtualHost>
+  </HTTPProxyConnection>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+</ProxyEndpoint>

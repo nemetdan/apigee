@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <Description/>
+  <Flows>
+    <Flow name="mediation-json2xml">
+      <Description/>
+      <Request/>
+      <Response>
+        <Step>
+          <FaultRules/>
+          <Name>jsontoxml</Name>
+        </Step>
+      </Response>
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/mediation/json2xml&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+    </Flow>
+    <Flow name="mediation-xml2json">
+      <Description/>
+      <Request>
+        <Step>
+          <FaultRules/>
+          <Name>addcontenttypeheader</Name>
+        </Step>
+      </Request>
+      <Response>
+        <Step>
+          <FaultRules/>
+          <Name>xmltojson</Name>
+        </Step>
+      </Response>
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/mediation/xml2json&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+    </Flow>
+    <Flow name="traffic-quota">
+      <Description/>
+      <Request>
+        <Step>
+          <FaultRules/>
+          <Name>quota</Name>
+        </Step>
+      </Request>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/traffic/quota&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+    </Flow>
+    <Flow name="traffic-spike-arrest">
+      <Description/>
+      <Request>
+        <Step>
+          <FaultRules/>
+          <Name>spikearrest</Name>
+        </Step>
+      </Request>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/traffic/spike&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+    </Flow>
+    <Flow name="mediation-assign-message">
+      <Description/>
+      <Request>
+        <Step>
+          <FaultRules/>
+          <Name>formatxml</Name>
+        </Step>
+      </Request>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/mediation/assign-message&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+    </Flow>
+    <Flow name="mediation-raise-fault">
+      <Description/>
+      <Request/>
+      <Response>
+        <Step>
+          <FaultRules/>
+          <Name>raisefault</Name>
+        </Step>
+      </Response>
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/mediation/raise-fault&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+    </Flow>
+    <Flow name="mediation-extract-variables">
+      <Description/>
+      <Request>
+        <Step>
+          <FaultRules/>
+          <Name>extractvariables</Name>
+        </Step>
+        <Step>
+          <FaultRules/>
+          <Name>extractvariables-raisefault</Name>
+        </Step>
+      </Request>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/mediation/extract-variables&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+    </Flow>
+    <Flow name="mediation-access-entity">
+      <Description/>
+      <Request>
+        <Step>
+          <FaultRules/>
+          <Name>gettestbundle</Name>
+        </Step>
+      </Request>
+      <Response/>
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/mediation/access-entity&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+    </Flow>
+  </Flows>
+  <PreFlow name="PreFlow">
+    <Request/>
+    <Response/>
+  </PreFlow>
+  <HTTPProxyConnection>
+    <BasePath>/v1/tests</BasePath>
+    <VirtualHost>default</VirtualHost>
+    <VirtualHost>secure</VirtualHost>
+  </HTTPProxyConnection>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+</ProxyEndpoint>

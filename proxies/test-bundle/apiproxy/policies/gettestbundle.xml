@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AccessEntity async="false" continueOnError="false" enabled="true" name="gettestbundle">
+  <DisplayName>GetTestBundle</DisplayName>
+  <EntityType value="developer"/>
+  <EntityIdentifier ref="dan.nemeth@merck.com" type="developeremail"/>
+</AccessEntity>

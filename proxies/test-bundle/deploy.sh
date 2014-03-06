@@ -8,7 +8,7 @@ read -s password
 
 echo Deploying test-bundle to $env on $url using $username and $org
 
-../../tools/deploy.py -n test-bundle -u $username:$password -o $org -h $url -e $env -p ../../proxies/test-bundle -d ../../proxies/test-bundle
+../../tools/deploy.py -n test-bundle -u $username:$password -o $org -h $url -e $env -p ../test-bundle -d ../test-bundle
 
 echo "If 'State: deployed', then your API Proxy is ready to be invoked."
 echo "Run '$ sh invoke.sh'"
